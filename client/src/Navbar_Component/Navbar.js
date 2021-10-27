@@ -21,31 +21,31 @@ const Navbar = () => {
                             <div className="ml-10 flex items-baseline space-x-4">
                                 <Link
                                     to="/"
-                                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-lg font-medium"
                                 >
                                     Home
                                 </Link>
                                 <Link
                                     to="/project"
-                                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
                                 >
                                     Projects
                                 </Link>
                                 <Link
                                     to="/myCv"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md textlg font-medium"
                                 >
                                     My CV
                                 </Link>
                                 <Link
                                     to="/about"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
                                 >
                                     About
                                 </Link>
                                 <Link
                                     to="/contact"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
                                 >
                                     Contact Me
                                 </Link>
