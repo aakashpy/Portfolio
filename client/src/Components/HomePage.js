@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Heroimage from './Heroimage.jpg'
 
 const HomePage = () => {
@@ -63,9 +64,11 @@ const HomePage = () => {
                 </div>
                 {/* Button redirecting to projects page*/}
                 <div className="mb-4">
+                <Link to ="/project">
                 <button className="text-white rounded-lg border-2 border-double text-center text-xl
                 flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
                 hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">Explore</button>
+                </Link>
                 </div>
             </div>
         </>

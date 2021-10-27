@@ -6,8 +6,8 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <>
-            <nav className="bg-black w-full mx-auto px-4 sm:px-6 lg:px-8 md:w-5/6">
-                <div className="flex items-center justify-between h-16 max-w-full">
+            <nav className="bg-black w-full mx-auto px-4 sm:px-6 lg:px-8 md:w-full">
+                <div className="flex items-center justify-between h-20 max-w-full">
                     <div className="flex items-center w-screen justify-between mx-auto">
                         <div className=" flex  items-center">
                             {/* <img
