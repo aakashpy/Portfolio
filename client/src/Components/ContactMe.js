@@ -44,12 +44,22 @@ const ContactMe = (props) => {
                         <div className="flex justify-center mt-4 mb-4 md:mt-2">
                             <div className="px-3 pt-3 pl-3 md:pt-7">
                                 <a href="https://www.instagram.com/aakashg_03/"><img src={insta}
-                                    alt="instagram"/></a>
+                                    alt="instagram" /></a>
                             </div>
                             <div className="px-3 pt-3 pl-3 md:pt-7">
                                 <a href="https://www.linkedin.com/in/aakash-ghole-350332218/"><img src={linkdin}
-                                    alt="linkdin"/></a>
+                                    alt="linkdin" /></a>
                             </div>
+                        </div>
+                        <div className="flex flex-wrap justify-center text-white text-2xl mt-6 md:mt-12 border-4 border-dashed rounded-lg p-3 ">
+                            <div>Hit the</div>
+                            <div>
+                                <button className="text-white rounded-lg md:h-auto md:w-28 border-2 border-double text-center text-xl
+                                    flex justify-center m-auto px-5 mx-2 bg-gradient-to-r from-blue-500 via-black to-blue-500
+                                    hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">
+                                Subscribe</button>
+                            </div>
+                            <div>to get all notifications via email</div>
                         </div>
                     </div>
                 </section>
