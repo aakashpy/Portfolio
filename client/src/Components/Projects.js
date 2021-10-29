@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import hero_image from './hero_image.jpg'
+import hero_image from './Images/hero_image.jpg'
 
-const Projects = () => {
+const Projects = (props) => {
     return (
         <>
             <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto">
+            {props.navbar}
                 <div className="relative ">
                     <img className="opacity-90 md:h-image md:w-full" src={hero_image} alt="heroImage"/>
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2

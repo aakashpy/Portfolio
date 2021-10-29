@@ -20,13 +20,12 @@ import About from './Components/About'
 function App() {
   return (
     <Router>
-      <Navbar/>
       <Switch>
-        <Route path="/"exact><HomePage/></Route>
-        <Route path="/project" exact><Projects/></Route>
-        <Route path="/myCv" exact><MyCV/></Route>
-        <Route path="/about" exact><About/></Route>
-        <Route path="/contact" exact><ContactMe/></Route>
+        <Route path="/"exact><HomePage navbar={<Navbar/>}/></Route>
+        <Route path="/project" exact><Projects navbar={<Navbar/>}/></Route>
+        <Route path="/myCv" exact><MyCV navbar={<Navbar/>}/></Route>
+        <Route path="/about" exact><About navbar={<Navbar/>}/></Route>
+        <Route path="/contact" exact><ContactMe navbar={<Navbar/>}/></Route>
         <Route path="/project/btre_real_estate" exact><Btre/></Route>
         <Route path="/project/shot_mobile_store" exact><Shot/></Route>
         <Route path="/project/sparkx_bank" exact><Sparkx/></Route>

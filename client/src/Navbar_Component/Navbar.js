@@ -15,7 +15,7 @@ const Navbar = () => {
                                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                                     alt="Workflow"
                                 /> */}
-                            <div className="font-serif font-bold text-2xl text-purple-400 pl-3 ">Portfolio</div>
+                            <div className="font-serif font-bold text-3xl md:text-2xl text-purple-400 pl-3 ">Portfolio</div>
                         </div>
                         <div className="hidden md:block ">
                             <div className="ml-10 flex items-baseline space-x-4">
