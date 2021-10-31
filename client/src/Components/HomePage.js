@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Heroimage from './Images/Heroimage.jpg'
+import Profilepic from './Images/Profilepic.jpg'
 
 const HomePage = (props) => {
     return (
@@ -8,7 +8,7 @@ const HomePage = (props) => {
             <div className="flex flex-col bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto md:h-screen">
                 {props.navbar}
                 <div className="flex justify-center mt-2">
-                    <img className="rounded-full border-2 border-blue-900 h-36 w-28 md:h-48 md:w-40" src={Heroimage} alt="hero" />
+                    <img className="rounded-full border-2 border-blue-900 h-36 w-28 md:h-48 md:w-40" src={Profilepic} alt="hero" />
                 </div>
                 <div className="flex flex-wrap text-center text-white mx-auto pb-4">
                     <h1 className="font-serif text-xl md:text-3xl">Hello I am Aakash Ghole<br />
