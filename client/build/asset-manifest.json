@@ -1,22 +1,40 @@
 {
   "files": {
-    "main.css": "/static/css/main.43058468.chunk.css",
-    "main.js": "/static/js/main.1e752721.chunk.js",
-    "main.js.map": "/static/js/main.1e752721.chunk.js.map",
+    "main.css": "/static/css/main.038b8deb.chunk.css",
+    "main.js": "/static/js/main.1cf2c405.chunk.js",
+    "main.js.map": "/static/js/main.1cf2c405.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.71c5bbf3.js",
     "runtime-main.js.map": "/static/js/runtime-main.71c5bbf3.js.map",
-    "static/js/2.29808a71.chunk.js": "/static/js/2.29808a71.chunk.js",
-    "static/js/2.29808a71.chunk.js.map": "/static/js/2.29808a71.chunk.js.map",
+    "static/js/2.7b410ec4.chunk.js": "/static/js/2.7b410ec4.chunk.js",
+    "static/js/2.7b410ec4.chunk.js.map": "/static/js/2.7b410ec4.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.43058468.chunk.css.map": "/static/css/main.43058468.chunk.css.map",
-    "static/js/2.29808a71.chunk.js.LICENSE.txt": "/static/js/2.29808a71.chunk.js.LICENSE.txt",
-    "static/media/Heroimage.5ecdc9f1.jpg": "/static/media/Heroimage.5ecdc9f1.jpg",
-    "static/media/hero_image.5a354ad9.jpg": "/static/media/hero_image.5a354ad9.jpg"
+    "static/css/main.038b8deb.chunk.css.map": "/static/css/main.038b8deb.chunk.css.map",
+    "static/js/2.7b410ec4.chunk.js.LICENSE.txt": "/static/js/2.7b410ec4.chunk.js.LICENSE.txt",
+    "static/media/Aakash.jpg": "/static/media/Aakash.5ecdc9f1.jpg",
+    "static/media/NodeMCU.b99d3467.jpg": "/static/media/NodeMCU.b99d3467.jpg",
+    "static/media/Profilepic.5ecdc9f1.jpg": "/static/media/Profilepic.5ecdc9f1.jpg",
+    "static/media/Sneha.jpg": "/static/media/Sneha.9520c2c2.jpg",
+    "static/media/breadboard.496867d5.jpg": "/static/media/breadboard.496867d5.jpg",
+    "static/media/hero_image.5a354ad9.jpg": "/static/media/hero_image.5a354ad9.jpg",
+    "static/media/i1.jpg": "/static/media/i1.170310de.jpg",
+    "static/media/i10.jpg": "/static/media/i10.ff6189cc.jpg",
+    "static/media/i11.jpg": "/static/media/i11.2ccc128e.jpg",
+    "static/media/i12.jpg": "/static/media/i12.a6da2674.jpg",
+    "static/media/i2.jpg": "/static/media/i2.0b37ba1c.jpg",
+    "static/media/i2c_lcd.d8f47d52.jpg": "/static/media/i2c_lcd.d8f47d52.jpg",
+    "static/media/i3.jpg": "/static/media/i3.e04a6133.jpg",
+    "static/media/i4.jpg": "/static/media/i4.a7b37a16.jpg",
+    "static/media/i5.jpg": "/static/media/i5.af07157b.jpg",
+    "static/media/i6.jpg": "/static/media/i6.19ddc645.jpg",
+    "static/media/i7.jpg": "/static/media/i7.ec437d12.jpg",
+    "static/media/i8.jpg": "/static/media/i8.d7f24e0c.jpg",
+    "static/media/i9.jpg": "/static/media/i9.23670e06.jpg",
+    "static/media/jumpers.ef2be23a.jpg": "/static/media/jumpers.ef2be23a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.71c5bbf3.js",
-    "static/js/2.29808a71.chunk.js",
-    "static/css/main.43058468.chunk.css",
-    "static/js/main.1e752721.chunk.js"
+    "static/js/2.7b410ec4.chunk.js",
+    "static/css/main.038b8deb.chunk.css",
+    "static/js/main.1cf2c405.chunk.js"
   ]
 }
