@@ -13,6 +13,7 @@ import BioFm from './Components/Projects_List/BioFm'
 import Billing from './Components/Projects_List/Billing'
 import ML from './Components/Projects_List/ML'
 import Portfolio from './Components/Projects_List/Portfolio'
+import Attendance from './Components/Projects_List/Attendance'
 import ContactMe from './Components/ContactMe'
 import MyCV from './Components/MyCV'
 import About from './Components/About'
@@ -36,6 +37,7 @@ function App() {
         <Route path="/project/billing" exact><Billing/></Route>
         <Route path="/project/ml" exact><ML/></Route>
         <Route path="/project/portfolio" exact><Portfolio/></Route>
+        <Route path="/project/attendance"exact><Attendance navbar={<Navbar/>}/></Route>
       </Switch>
     </Router>
   );
