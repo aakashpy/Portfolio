@@ -20,7 +20,7 @@ const Attendance = (props) => {
                 </h2>
                 <p className="pb-4 text-2xl font-base">
                     IOT Attendance is a system designed in such a way that it takes attendance of students with help of finger print sensor
-                    and stores it google sheets via internet. This device is a portable and handy device which the user can take with him anywhere.
+                    and stores it in google sheets via internet. This device is a portable and handy device which the user can take with him anywhere.
                 </p>
                 <hr />
                 <h2 className="text-4xl pb-2 pt-5">
@@ -151,8 +151,8 @@ const Attendance = (props) => {
                                     Now you have to create an account on IFTTT. You have to create an new applet, select webhooks in IF section, click on https request,enter the number of values you want to send
                                     (here we have taken 3 values).Then on (That) section  go to Google sheets and click on edit rows. After completing all the steps launch the Applet.
                                     For more clear stpes you can go to the youtube link <a href="https://www.youtube.com/watch?v=XVMze7O8qSQ" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">here</a>.
-                                    Copy the google sheet id and paste it in the google sheet id section in the arduino code. Copy the google script code given in the github link and paste it the curent google sheet.
-                                    Make another google sheet and add roll no and name of the students in two columns. Add this google sheet id in the previous google sheet's script.
+                                    Copy the google sheet id and paste it in the google sheet id section in the arduino code. Copy the google script code given in the github link and paste it the IFTTT google sheet.
+                                    Make another google sheet and add roll no and name of the students in two columns. Add this google sheet id in the IFTTT google sheet's script.
                                 </td>
                             </tr>
                             <tr>
@@ -161,8 +161,8 @@ const Attendance = (props) => {
                                 </td>
                                 <td className="border border-black">
                                     After completing the above steps now your data from device will be ready to send the attendance. Now go to the Attendance function, on entering it would start scanning for the
-                                    fingerprints. First the super user should give his fingerprint, if not given the function would exit. When falculty id is found it wolud ask for number of lectures the user want to
-                                    mark attendance for students. Then the students should give their attenadnce one by one and on successful match it would show you the roll no and confidence number and within few seconds your
+                                    fingerprints. First the super user should give his fingerprint, if not given the function would exit. When faculty id is found it would ask for number of lectures the user want to
+                                    mark attendance for students. Then the students should give their attenadnce one by one and on successful match it would show you the roll no and confidence number on the LCD screen and within few seconds your
                                     attendance will be marked on the google sheets.Each day a new column will get filled because of the google script which you have pasted in the IFTTT google sheet.
                                 </td>
                             </tr>
