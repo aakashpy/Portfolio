@@ -321,8 +321,7 @@ const Attendance = (props) => {
                             <div className="h-full text-center">
                                 <img alt="Dhairya" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={require('../Images/CONTRIBUTORS/Dhairya.jpg').default}/>
                                 <p className="text-3xl">Dhairya Honrao</p>
-                                    <p className="leading-relaxed">3rd Year Computer Science Student at Atharva College of Engineering, Mumbai Unversity</p>
-                                    
+                                    <p className="leading-relaxed">3rd Year Computer Science Student at Atharva College of Engineering, Mumbai Unversity</p>           
                                     <p className="text-white mb-3 mt-3">IOT specialist and UI designer</p>
                                     <div className="flex justify-center md:absolute md:bottom-1 md:inset-x-0">
                                     <a href="https://github.com/DhairyaHonrao" target="_blank" rel="noreferrer"className="text-white">

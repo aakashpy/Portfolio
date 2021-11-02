@@ -1,4 +1,5 @@
 import React from 'react'
+import "@material-tailwind/react/tailwind.css";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './Navbar_Component/Navbar'
 import HomePage from './Components/HomePage'

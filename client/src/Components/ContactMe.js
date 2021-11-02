@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from "@material-tailwind/react/Modal";
+import ModalBody from "@material-tailwind/react/ModalBody";
+import ModalFooter from "@material-tailwind/react/ModalFooter";
+import Button from "@material-tailwind/react/Button";
+import validator from 'validator'
 import insta from './Images/insta.png'
 import linkdin from './Images/linkdin.png'
 
 const ContactMe = (props) => {
+    const [showModal, setShowModal] = useState(false);
+    const [name, setName] = useState('');
+    const [emailError, setEmailError] = useState('')
+    function handleChange(e) {
+        e.preventDefault();
+        setName(e.target.value);
+        var email = e.target.value
+
+        if (validator.isEmail(email)) {
+            setEmailError('Valid Email :)')
+        } else {
+            setEmailError('Enter valid Email!')
+        }
+    };
     return (
         <>
             <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto md:h-screen">
@@ -17,26 +36,27 @@ const ContactMe = (props) => {
                             <div className="flex flex-wrap -m-2">
                                 <div className="p-2 w-1/2">
                                     <div className="relative">
-                                        <label for="name" className="leading-7 text-md text-white">Name</label>
+                                        <label htmlFor="name" className="leading-7 text-md text-white">Name</label>
                                         <input type="text" id="name" name="name" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                                     </div>
                                 </div>
                                 <div className="p-2 w-1/2">
                                     <div className="relative">
-                                        <label for="email" className="leading-7 text-md text-white">Email</label>
+                                        <label htmlFor="email" className="leading-7 text-md text-white">Email</label>
                                         <input type="email" id="email" name="email" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                                     </div>
                                 </div>
                                 <div className="p-2 w-full">
                                     <div className="relative">
-                                        <label for="message" className="leading-7 text-md text-white">Message</label>
+                                        <label htmlFor="message" className="leading-7 text-md text-white">Message</label>
                                         <textarea id="message" name="message" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                                     </div>
                                 </div>
                                 <div className="p-2 w-full">
                                     <button className="text-white rounded-lg md:h-auto md:w-28 border-2 border-double text-center text-xl
                                     flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
-                                    hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">Submit</button>
+                                    hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black"
+                                    >Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -56,14 +76,42 @@ const ContactMe = (props) => {
                             <div>
                                 <button className="text-white rounded-lg md:h-auto md:w-28 border-2 border-double text-center text-xl
                                     flex justify-center m-auto px-5 mx-2 bg-gradient-to-r from-blue-500 via-black to-blue-500
-                                    hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">
-                                Subscribe</button>
+                                    hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black"
+                                    onClick={(e) => setShowModal(true)}>Subscribe</button>
                             </div>
                             <div>to get all notifications via email</div>
                         </div>
                     </div>
                 </section>
             </div>
+            <Modal size="lg" active={showModal} toggler={() => setShowModal(false)}>
+                <ModalBody>
+                    <div className="p-2 w-full">
+                        <div className="text-center">
+                            <label htmlFor="email" className="leading-7 text-md text-black">Email</label>
+                            <input type="email" id="email" name="email" onChange={handleChange} value={name}
+                                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        </div>
+                        <span>{emailError}</span>
+                    </div>
+                </ModalBody>
+                <ModalFooter>
+                    <div className="mx-auto">
+                        <Button
+                            color="red"
+                            onClick={(e) => {
+                                setShowModal(false)
+                                setName('')
+                                setEmailError('')
+                                alert("Hello! I am an alert box!!")
+                            }
+                            }
+                            ripple="light">
+                            Subscribe
+                        </Button>
+                    </div>
+                </ModalFooter>
+            </Modal>
         </>
     )
 }
