@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Modal from "@material-tailwind/react/Modal";
 import ModalBody from "@material-tailwind/react/ModalBody";
 import ModalFooter from "@material-tailwind/react/ModalFooter";
@@ -10,7 +10,7 @@ import linkdin from './Images/linkdin.png'
 
 const ContactMe = (props) => {
     const [showModal, setShowModal] = useState(false);
-    const [name, setName] = useState('');
+    const [email_name, setemailName] = useState('');
     const [otp, setOtp] = useState();
     const [emailError, setEmailError] = useState('');
     const [otp_flag, setotp_flag] = useState('0')
@@ -18,43 +18,61 @@ const ContactMe = (props) => {
 
     function handleChange(e) {
         e.preventDefault();
-        setName(e.target.value);
+        setemailName(e.target.value);
         var email = e.target.value
         setemail_flag('0')
         setotp_flag('0')
+        setOtp()
 
         if (validator.isEmail(email)) {
             setEmailError('Valid Email!')
-
         } else {
             setEmailError('Enter valid Email!')
-            
         }
     };
     const otp_number = (e) => {
         e.preventDefault();
         setOtp(e.target.value);
     }
+    useEffect(()=>{
+        if(otp === '123'){
+            setEmailError('OTP is valid')
+        }
+        
+    },[otp])
     const check_email = () => {
-        if (name !=="") {
-            axios.get(`/api/email/${name}`)
+        if (email_name !== "") {
+            axios.get(`/api/email/${email_name}`)
                 .then(res => {
                     const email_subscribed = res.data
                     if (!email_subscribed.error) {
-                        setEmailError('You have already subscribed :)')
                         setemail_flag('1')
                     }
                     else {
                         setotp_flag('1')
                         setemail_flag('0')
+                        setEmailError('')
                     }
                 })
                 .catch(err => console.log(err));
         }
     }
-
-    //check otp verification
-    //const otp = Math.floor(Math.random() * 100000);
+    const send_otp = () => {
+        const otp_Number = Math.floor(Math.random() * 100000);
+        const msg = {
+            to: email_name,
+            from: 'gholeaakash03@gmail.com', // Use the email address or domain you verified above
+            subject: `OTP verification from Aakash's Portfolio`,
+            text: `your otp number is ${otp_Number}`,
+        };
+        console.log(msg)
+        axios.post('/api/email/sendOtp',msg)
+        .then(res=>{
+            console.log(res.data)
+            setShowModal(false)
+        })
+        .catch(err => console.log(err))
+    }
 
     return (
         <>
@@ -123,7 +141,7 @@ const ContactMe = (props) => {
                     <div className="p-2 w-full text-center">
                         <div className="text-center pb-2">
                             <label htmlFor="email" className="leading-7 text-xl text-black ">Enter your email id</label>
-                            <input type="email" id="email" name="email" onChange={handleChange} value={name}
+                            <input type="email" id="email" name="email" onChange={handleChange} value={email_name}
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
                         {otp_flag === '1' &&
@@ -140,7 +158,15 @@ const ContactMe = (props) => {
                     <div className="mx-auto">
                         <Button
                             color="red"
-                            onClick={() => check_email()}
+
+                            onClick={() => {
+                                if (otp_flag === '1') {
+                                    send_otp()
+                                } else {
+                                    check_email()
+                                }
+
+                            }}
                             ripple="light">
                             {otp_flag === '1' ? 'Subscribe' : 'Check Mail'}
                         </Button>
