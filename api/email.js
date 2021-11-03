@@ -11,6 +11,9 @@ const msg = {
     text: 'and easy to do anywhere, even with Node.js',
     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
   };
+
+// Get all emails subscribed
+
 Router.get("/",async (req,res)=>{
     const getAllEmail = await EmailModel.find();
     return res.json(getAllEmail);
@@ -26,4 +29,20 @@ Router.get("/",async (req,res)=>{
   // });
   //   return res.json({message:"email server working"});
 })
+
+// Get email of current user if present
+Router.get("/:email",async(req, res)=>{
+  const getemail = await EmailModel.findOne({
+    email: req.params.email,
+});
+if (!getemail) {
+    return res.json({
+        error: `No email found named ${req.params.email}`,
+    });
+}
+return res.json(getemail);
+})
+
+// Post email to mongo
+
 module.exports = Router;

@@ -4,24 +4,58 @@ import ModalBody from "@material-tailwind/react/ModalBody";
 import ModalFooter from "@material-tailwind/react/ModalFooter";
 import Button from "@material-tailwind/react/Button";
 import validator from 'validator'
+import axios from 'axios'
 import insta from './Images/insta.png'
 import linkdin from './Images/linkdin.png'
 
 const ContactMe = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [name, setName] = useState('');
-    const [emailError, setEmailError] = useState('')
+    const [otp, setOtp] = useState();
+    const [emailError, setEmailError] = useState('');
+    const [otp_flag, setotp_flag] = useState('0')
+    const [email_flag, setemail_flag] = useState('0')
+
     function handleChange(e) {
         e.preventDefault();
         setName(e.target.value);
         var email = e.target.value
+        setemail_flag('0')
+        setotp_flag('0')
 
         if (validator.isEmail(email)) {
-            setEmailError('Valid Email :)')
+            setEmailError('Valid Email!')
+
         } else {
             setEmailError('Enter valid Email!')
+            
         }
     };
+    const otp_number = (e) => {
+        e.preventDefault();
+        setOtp(e.target.value);
+    }
+    const check_email = () => {
+        if (name !=="") {
+            axios.get(`/api/email/${name}`)
+                .then(res => {
+                    const email_subscribed = res.data
+                    if (!email_subscribed.error) {
+                        setEmailError('You have already subscribed :)')
+                        setemail_flag('1')
+                    }
+                    else {
+                        setotp_flag('1')
+                        setemail_flag('0')
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+    }
+
+    //check otp verification
+    //const otp = Math.floor(Math.random() * 100000);
+
     return (
         <>
             <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto md:h-screen">
@@ -86,28 +120,29 @@ const ContactMe = (props) => {
             </div>
             <Modal size="lg" active={showModal} toggler={() => setShowModal(false)}>
                 <ModalBody>
-                    <div className="p-2 w-full">
-                        <div className="text-center">
-                            <label htmlFor="email" className="leading-7 text-md text-black">Enter your email id</label>
+                    <div className="p-2 w-full text-center">
+                        <div className="text-center pb-2">
+                            <label htmlFor="email" className="leading-7 text-xl text-black ">Enter your email id</label>
                             <input type="email" id="email" name="email" onChange={handleChange} value={name}
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
-                        <span>{emailError}</span>
+                        {otp_flag === '1' &&
+                            <div className="text-center pb-2">
+                                <label htmlFor="opt" className="leading-7 text-xl text-black ">Enter otp sent to your email id</label>
+                                <input type="number" id="otp" name="otp" onChange={otp_number} value={otp}
+                                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            </div>
+                        }
+                        {email_flag === '1' ? <div className="text-xl">You have already subscribed :)</div> : <div className="text-xl">{emailError}</div>}
                     </div>
                 </ModalBody>
                 <ModalFooter>
                     <div className="mx-auto">
                         <Button
                             color="red"
-                            onClick={(e) => {
-                                setShowModal(false)
-                                setName('')
-                                setEmailError('')
-                                alert("Hello! I am an alert box!!")
-                            }
-                            }
+                            onClick={() => check_email()}
                             ripple="light">
-                            Submit
+                            {otp_flag === '1' ? 'Subscribe' : 'Check Mail'}
                         </Button>
                     </div>
                 </ModalFooter>
