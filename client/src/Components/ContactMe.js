@@ -18,19 +18,20 @@ const ContactMe = (props) => {
     const [email_flag, setemail_flag] = useState('');
     const [isSubscribed, setisSubscribed] = useState(false);
     const [isValid, setisValid] = useState(false);
-    const [otp_Number,setotp_Number] = useState('0')
-    
+    const [otp_Number, setotp_Number] = useState('')
+
     useEffect(() => {
-        if (otp === String(otp_Number) && otp!=='') {
+        if (otp === String(otp_Number) && otp !== '') {
             setEmailError('OTP is valid')
+            setisValid(true);
             setotp_flag_button('2')
         }
-        if(otp !== String(otp_Number) && otp!==''){
+        if (otp !== String(otp_Number) && otp !== '') {
             setEmailError('OTP is invalid')
             setotp_flag_button('0')
         }
-        
-    },[otp, otp_Number])
+
+    }, [otp, otp_Number])
 
     function handleChange(e) {
         e.preventDefault();
@@ -42,16 +43,14 @@ const ContactMe = (props) => {
         if (validator.isEmail(email)) {
             setEmailError('Valid Email!')
             setisValid(true);
-            setotp_Number(Math.floor(Math.random() * 100000)+10000);
+            setotp_Number(Math.floor(Math.random() * 100000) + 10000);
         } else {
             setEmailError('Enter valid Email!')
             setisValid(false);
         }
     };
-    
+
     const check_email = () => {
-        
-        console.log(otp_Number)
         if (email_name !== "") {
             axios.get(`/api/email/${email_name}`)
                 .then(res => {
@@ -60,7 +59,7 @@ const ContactMe = (props) => {
                         setemail_flag('1')
                     }
                     else {
-                        
+                        setisValid(false);
                         setotp_flag('1')
                         setemail_flag('0')
                         setEmailError('')
@@ -70,43 +69,43 @@ const ContactMe = (props) => {
                             subject: `OTP verification from Aakash's Portfolio`,
                             text: `your otp number is ${otp_Number}`,
                         };
-                        console.log(msg)
-                        
-                        // axios.post('/api/email/sendOtp', msg)
-                        //     .then(res => {
-                        //         console.log(res.data)
-                        //         setemail_flag('0')
-                        //         setEmailError('')
-                        //     })
-                        //     .catch(err => console.log(err))
+                        axios.post('/api/email/sendOtp', msg)
+                            .then(res => {
+                                setemail_flag('0')
+                                setEmailError('')
+                            })
+                            .catch(err => console.log(err))
                     }
                 })
                 .catch(err => console.log(err));
         }
     }
+    
     const otp_number = (e) => {
         e.preventDefault();
         setOtp(e.target.value);
     }
-    
 
     const add_email = () => {
-            const addEmail = {
-                email:email_name
-            }
-            axios.post('/api/email/add',addEmail)
-            .then(res=>console.log(res.data))
-            setisSubscribed(true)
-            setotp_flag_button('1')
+        const addEmail = {
+            email: email_name
+        }
+        axios.post('/api/email/add', addEmail)
+            .then(res => console.log(res.data))
+        setisSubscribed(true)
+        setotp_flag_button('1')
     }
- const close=()=>{
-    setShowModal(false)
-    setisSubscribed(false)
-    setotp_flag('')
-    setemailName('')
-    setEmailError('')
-    setotp_flag_button('')
- }
+    const close = () => {
+        setShowModal(false)
+        setisSubscribed(false)
+        setotp_flag('')
+        setemailName('')
+        setEmailError('')
+        setotp_flag_button('')
+        setOtp('')
+        setotp_Number('')
+        setisValid(false);
+    }
     return (
         <>
             <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto md:h-screen">
@@ -171,14 +170,14 @@ const ContactMe = (props) => {
             </div>
             <Modal size="lg" active={showModal} toggler={() => setShowModal(false)}>
                 <ModalBody>
-                    <>{isSubscribed?<div className="text-center">You are now subscribed</div>:
-                    <div className="p-2 w-full text-center">
+                    <>{isSubscribed ? <div className="text-center">You are now subscribed</div> :
+                        <div className="p-2 w-full text-center">
                             <div className="text-center pb-2">
                                 <label htmlFor="email" className="leading-7 text-xl text-black ">Enter your email id</label>
                                 <input type="email" id="email" name="email" onChange={handleChange} value={email_name}
                                     className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
-                            {(otp_flag === '1')&&
+                            {(otp_flag === '1') &&
                                 <div className="text-center pb-2">
                                     <label htmlFor="opt" className="leading-7 text-xl text-black ">Enter otp sent to your email id</label>
                                     <input type="number" id="otp" name="otp" onChange={otp_number} value={otp}
@@ -187,28 +186,26 @@ const ContactMe = (props) => {
                             }
                             {email_flag === '1' ? <div className="text-xl">You have already subscribed :)</div> : <div className="text-xl">{emailError}</div>}
                         </div>}
-                        
                     </>
                 </ModalBody>
                 <ModalFooter>
                     <div className="mx-auto">
-                        {isValid&&<Button
+                        {isValid && <Button
                             color="red"
                             onClick={() => {
                                 if (otp_flag_button === '2') {
                                     add_email()
-                                } else if(otp_flag_button === '1'){
+                                } else if (otp_flag_button === '1') {
                                     close()
-                                }else{
+                                } else {
                                     check_email()
                                 }
                             }}
                             ripple="light">
-                            {(otp_flag_button!=='1' && otp_flag_button!=='2') && 'Check email'}
+                            {(otp_flag_button !== '1' && otp_flag_button !== '2') && 'Check email'}
                             {otp_flag_button === '2' && 'Subscribe'}
                             {otp_flag_button === '1' && 'Close'}
                         </Button>}
-                        
                     </div>
                 </ModalFooter>
             </Modal>
