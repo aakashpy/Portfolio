@@ -55,7 +55,7 @@ const ContactMe = (props) => {
             axios.get(`/api/email/${email_name}`)
                 .then(res => {
                     const email_subscribed = res.data
-                    if (!email_subscribed.error) {
+                    if (email_subscribed.length>0) {
                         setemail_flag('1')
                     }
                     else {
@@ -80,7 +80,7 @@ const ContactMe = (props) => {
                 .catch(err => console.log(err));
         }
     }
-    
+
     const otp_number = (e) => {
         e.preventDefault();
         setOtp(e.target.value);
@@ -211,6 +211,6 @@ const ContactMe = (props) => {
             </Modal>
         </>
     )
-}
+   }
 
 export default ContactMe
