@@ -129,7 +129,7 @@ const Attendance = (props) => {
                                     STEP 1 -{'>'}
                                 </td>
                                 <td className="border border-black">
-                                    Do all the circuit connections as given in the diagram. Make sure u give 5 volt power supply to NodeMCU and not above it as it
+                                    Do all the circuit connections as given in the <a href={require('../Images/circuit_diagram.jpg').default} target="_blank" rel="noreferrer" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">diagram</a>. Make sure u give 5 volt power supply to NodeMCU and not above it as it
                                     would damage the board. Upload the sketch from the github link given below to NodeMCu using Arduino IDE. Once the code is uploaded to the board you will
                                     see the introduction text on LCD screen. If connections are proper it should not give any errors.
                                 </td>
