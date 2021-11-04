@@ -54,9 +54,8 @@ const ContactMe = (props) => {
         if (email_name !== "") {
             axios.get(`/api/email/${email_name}`)
                 .then(res => {
-                    const email_subscribed = res.data
                     console.log(res.data)
-                    if (!email_subscribed.error) {
+                    if (res.data) {
                         setemail_flag('1')
                     }
                     else {
