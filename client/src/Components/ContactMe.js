@@ -11,14 +11,23 @@ import linkdin from './Images/linkdin.png'
 const ContactMe = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [email_name, setemailName] = useState('');
-    const [otp, setOtp] = useState('');
     const [emailError, setEmailError] = useState('');
+    const [email_flag, setemail_flag] = useState('');
+    const [email_data, setemail_data] = useState([])
+    const [otp, setOtp] = useState('');
     const [otp_flag, setotp_flag] = useState('');
     const [otp_flag_button, setotp_flag_button] = useState('');
-    const [email_flag, setemail_flag] = useState('');
+    const [otp_Number, setotp_Number] = useState('')
     const [isSubscribed, setisSubscribed] = useState(false);
     const [isValid, setisValid] = useState(false);
-    const [otp_Number, setotp_Number] = useState('')
+
+    useEffect(() => {
+        axios.get(`/api/email/${email_name}`)
+            .then(res => {
+                setemail_data(res.data)
+            }
+            )
+    }, [email_name])
 
     useEffect(() => {
         if (otp === String(otp_Number) && otp !== '') {
@@ -52,32 +61,28 @@ const ContactMe = (props) => {
 
     const check_email = () => {
         if (email_name !== "") {
-            axios.get(`/api/email/${email_name}`)
-                .then(res => {
-                    console.log(res.data)
-                    if (res.data) {
-                        setemail_flag('1')
-                    }
-                    else {
-                        setisValid(false);
-                        setotp_flag('1')
-                        setemail_flag('0')
-                        setEmailError('')
-                        const msg = {
-                            to: email_name,
-                            from: 'gholeaakash03@gmail.com', // Use the email address or domain you verified above
-                            subject: `OTP verification from Aakash's Portfolio`,
-                            text: `your otp number is ${otp_Number}`,
-                        };
-                        axios.post('/api/email/sendOtp', msg)
-                            .then(res => {
-                                setemail_flag('0')
-                                setEmailError('')
-                            })
-                            .catch(err => console.log(err))
-                    }
-                })
-                .catch(err => console.log(err));
+            if (email_data.error) {
+                setisValid(false);
+                setotp_flag('1')
+                setemail_flag('0')
+                setEmailError('')
+                    const msg = {
+                        to: email_name,
+                        from: 'gholeaakash03@gmail.com', // Use the email address or domain you verified above
+                        subject: `OTP verification from Aakash's Portfolio`,
+                        text: `your otp number is ${otp_Number}`,
+                    };
+                    console.log(msg)
+                //     axios.post('/api/email/sendOtp', msg)
+                //         .then(res => {
+                //             setemail_flag('0')
+                //             setEmailError('')
+                //         })
+                //         .catch(err => console.log(err))
+            }
+            else {
+                setemail_flag('1')
+            }
         }
     }
 
@@ -211,6 +216,6 @@ const ContactMe = (props) => {
             </Modal>
         </>
     )
-   }
+}
 
 export default ContactMe
