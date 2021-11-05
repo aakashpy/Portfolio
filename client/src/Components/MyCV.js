@@ -13,19 +13,21 @@ const MyCV = (props) => {
             if(!data.error){
                 console.log("yaaay no error")
                 setemail(data)
-                return data
-                
+                console.log(data)
+                return data 
             }else{
                 console.log("error") 
+                return data
             }
         })
-        .then(()=>console.log(email))
+        
         .catch(err=>{
             console.log(err)
             console.log("bruh")
         }) 
     },[])
-    //setting_email=email 
+    var setting_email=email 
+    console.log(setting_email)
     // const email=[
     //     {
     //         _id:121,
@@ -37,9 +39,9 @@ const MyCV = (props) => {
         <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-screen">
         {props.navbar}
             MyCV
-            <div>
+            {/* <div>
                 {email.map((item) => <li key={item._id}>{item.email}</li>)}
-            </div>
+            </div> */}
         </div>
     )
 }
