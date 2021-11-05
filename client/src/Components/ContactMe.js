@@ -13,7 +13,6 @@ const ContactMe = (props) => {
     const [email_name, setemailName] = useState('');
     const [emailError, setEmailError] = useState('');
     const [email_flag, setemail_flag] = useState('');
-    const [email_data, setemail_data] = useState([])
     const [otp, setOtp] = useState('');
     const [otp_flag, setotp_flag] = useState('');
     const [otp_flag_button, setotp_flag_button] = useState('');
@@ -21,13 +20,7 @@ const ContactMe = (props) => {
     const [isSubscribed, setisSubscribed] = useState(false);
     const [isValid, setisValid] = useState(false);
 
-    useEffect(() => {
-        axios.get(`/api/email/${email_name}`)
-            .then(res => {
-                setemail_data(res.data)
-            }
-            )
-    }, [email_name])
+
 
     useEffect(() => {
         if (otp === String(otp_Number) && otp !== '') {
@@ -61,28 +54,32 @@ const ContactMe = (props) => {
 
     const check_email = () => {
         if (email_name !== "") {
-            if (email_data.error) {
-                setisValid(false);
-                setotp_flag('1')
-                setemail_flag('0')
-                setEmailError('')
-                    const msg = {
-                        to: email_name,
-                        from: 'gholeaakash03@gmail.com', // Use the email address or domain you verified above
-                        subject: `OTP verification from Aakash's Portfolio`,
-                        text: `your otp number is ${otp_Number}`,
-                    };
-                    console.log(msg)
-                //     axios.post('/api/email/sendOtp', msg)
-                //         .then(res => {
-                //             setemail_flag('0')
-                //             setEmailError('')
-                //         })
-                //         .catch(err => console.log(err))
-            }
-            else {
-                setemail_flag('1')
-            }
+            axios.get(`/api/email/${email_name}`)
+                .then(res => {
+                    if (res.data.error) {
+                        setisValid(false);
+                        setotp_flag('1')
+                        setemail_flag('0')
+                        setEmailError('')
+                        const msg = {
+                            to: email_name,
+                            from: 'gholeaakash03@gmail.com', // Use the email address or domain you verified above
+                            subject: `OTP verification from Aakash's Portfolio`,
+                            text: `your otp number is ${otp_Number}`,
+                        };
+                        axios.post('/api/email/sendOtp', msg)
+                            .then(res => {
+                                setemail_flag('0')
+                                setEmailError('')
+                            })
+                            .catch(err => console.log(err))
+                    }
+                    else {
+                        setemail_flag('1')
+                    }
+                }
+                )
+
         }
     }
 
