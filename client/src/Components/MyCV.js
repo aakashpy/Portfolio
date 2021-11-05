@@ -13,13 +13,13 @@ const MyCV = (props) => {
         ) 
     },[]) 
     
-    console.log(email)            
+    console.log(typeof(email))            
     return (
         <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-screen">
         {props.navbar}
-            My cv
+            MyCV
             <div>
-            {email.map(item => <h2> {item.email}</h2>)
+            {email.map((item) => <li key={item._id}> {item.email} </li>)
             }</div>
         </div>
     )
