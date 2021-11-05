@@ -1,7 +1,8 @@
+require('dotenv').config()
 const Router = require("express").Router();
 const EmailModel = require("../schema/email")
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.EMAIL_KEY);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 Router.get("/getemails",async (req,res)=>{
     const getAllEmail = await EmailModel.find();
