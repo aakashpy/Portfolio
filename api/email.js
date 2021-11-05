@@ -3,7 +3,7 @@ const EmailModel = require("../schema/email")
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.EMAIL_KEY);
 
-Router.get("/",async (req,res)=>{
+Router.get("/getemails",async (req,res)=>{
     const getAllEmail = await EmailModel.find();
     return res.json(getAllEmail);
 })
