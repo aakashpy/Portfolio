@@ -14,7 +14,6 @@ Router.get("/:email",async(req, res)=>{
   const getemail = await EmailModel.findOne({
     email: req.params.email,
 });
-console.log(req.params.email)
 if (!getemail) {
     return res.json({
       error: `No user found named ${req.params.name}`
