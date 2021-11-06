@@ -181,7 +181,7 @@ const ContactMe = (props) => {
                                         <button className="text-white rounded-lg md:h-auto md:w-28 border-2 border-double text-center text-xl
                                     flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
                                     hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black"
-                                            type="submit">Submit</button>
+                                            type="submit" >Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -203,7 +203,10 @@ const ContactMe = (props) => {
                                 <button className="text-white rounded-lg md:h-auto md:w-28 border-2 border-double text-center text-xl
                                     flex justify-center m-auto px-5 mx-2 bg-gradient-to-r from-blue-500 via-black to-blue-500
                                     hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black"
-                                    onClick={(e) => setShowModal(true)}>Subscribe</button>
+                                    onClick={(e) => {
+                                        setShowModal(true)
+                                        setform_modal(true)
+                                        }}>Subscribe</button>
                             </div>
                             <div>to get all notifications via email and would be sent via your email</div>
                         </div>
@@ -248,6 +251,7 @@ const ContactMe = (props) => {
                         {isValid ? <Button
                             color="red"
                             onClick={() => {
+                                
                                 if (otp_flag_button === '2') {
                                     add_email()
                                 } else if (otp_flag_button === '1') {
