@@ -208,7 +208,7 @@ const ContactMe = (props) => {
                                         setform_modal(true)
                                         }}>Subscribe</button>
                             </div>
-                            <div>to get all notifications via email and would be sent via your email</div>
+                            <div>to get all notifications via email</div>
                         </div>
                     </div>
                 </section>
@@ -237,7 +237,7 @@ const ContactMe = (props) => {
                     : <ModalBody>
                         <>
                             {form_submitted ? <div className="p-2 w-full text-center text-xl text-green-700 font-semibold">
-                                Your response is submitted
+                                Your response is submitted and would be sent via your email
                             </div>
                                 :
                                 <div className="p-2 w-full text-center text-xl text-red-700 font-semibold">
