@@ -143,7 +143,6 @@ const ContactMe = (props) => {
             }
         }
     }
-
     return (
         <>
             <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto md:h-screen">
