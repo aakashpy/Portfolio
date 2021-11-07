@@ -89,7 +89,7 @@ const ContactMe = (props) => {
             email: email_name
         }
         axios.post('/api/email/add', addEmail)
-            .then(res => console.log(res.data))
+            .then(res => res.data)
         setisSubscribed(true)
         setotp_flag_button('1')
     }
@@ -123,7 +123,6 @@ const ContactMe = (props) => {
                     .then(res => {
                         if (res.data.error) {
                             //tell user you have to subcribe first for security reasons and clear the form
-                            //console.log("you have to subcribe first for security reasons")
                             setShowModal(true)
                             setform_submitted(false)
                         }
@@ -131,7 +130,6 @@ const ContactMe = (props) => {
                             // submit there response
                             emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_USER_ID)
                                 .then((result) => {
-                                    console.log(result.text);
                                     setShowModal(true)
                                     setform_submitted(true)
                                 }, (error) => {
