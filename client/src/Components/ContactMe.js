@@ -123,7 +123,7 @@ const ContactMe = (props) => {
                     .then(res => {
                         if (res.data.error) {
                             //tell user you have to subcribe first for security reasons and clear the form
-                            console.log("you have to subcribe first for security reasons")
+                            //console.log("you have to subcribe first for security reasons")
                             setShowModal(true)
                             setform_submitted(false)
                         }
