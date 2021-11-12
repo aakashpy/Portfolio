@@ -169,7 +169,7 @@ const MyCV = (props) => {
                                 </div>
                                 <div className="row-span-3 col-span-3">
                                     <p className="text-lg font-semibold">Indian Certificate of Secondary Education</p>
-                                    <p>Passed out 12th board exams with 88% in Science stream</p>
+                                    <p>Passed out 10th board exams with 88% in Science stream</p>
                                     <p>Delhi University</p>
                                 </div>
                             </div>
