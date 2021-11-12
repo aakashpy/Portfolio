@@ -1,15 +1,27 @@
 import React from 'react'
-
+import jsPDF from 'jspdf';
+import * as htmlToImage from 'html-to-image';
+import { Link } from 'react-router-dom'
 const MyCV = (props) => {
-
+    const exportPdf = ()=>{
+        htmlToImage.toPng(document.getElementById('capture'), { quality: 0.95 })
+        .then(function (dataUrl) {
+          const pdf = new jsPDF();
+          const imgProps= pdf.getImageProperties(dataUrl);
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+          pdf.addImage(dataUrl, 'PNG', 0, 0,pdfWidth, pdfHeight);
+          pdf.save("Aakash's CV.pdf"); 
+        });
+    }
     return (
-        <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto">
+        <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-screen md:h-auto">
             {props.navbar}
-            <div className="mt-4 pb-4 grid grid-cols-12">
-                <div className="col-start-3 col-end-11 bg-gray-300 text-black">
+            <div className="hidden md:mt-4 md:pb-4 md:grid md:grid-cols-12">
+                <div className="col-start-3 col-end-11 bg-gray-300 text-black" id="capture">
                     <div className="grid grid-rows-1 grid-flow-col h-8">
-                        <div class="col-span-2 bg-black rounded-br-lg"></div>
-                        <div class="col-span-6"></div>
+                        <div className="col-span-2 bg-black rounded-br-lg"></div>
+                        <div className="col-span-6"></div>
                     </div>
                     <div className="grid grid-cols-12 bg-color-gray-100">
                         <div className="col-start-1 col-end-4 pl-2 pr-2 bg-gray-700 text-white rounded-lg m-1">
@@ -144,7 +156,7 @@ const MyCV = (props) => {
                                 EDUCATION
                             </div>
                             <hr />
-                            <div class="grid grid-flow-row grid-cols-5 grid-rows-3 gap-4 bg-gray-500 rounded-b-lg p-1">
+                            <div className="grid grid-flow-row grid-cols-5 grid-rows-3 gap-4 bg-gray-500 rounded-b-lg p-1">
                                 <div className="row-span-3 col-span-2">
                                     <div className="text-lg font-semibold">Atharva College of Engineering</div>
                                     <div className="text-lg font-semibold">2019 - 2023</div>
@@ -176,10 +188,24 @@ const MyCV = (props) => {
                         </div>
                     </div>
                     <div className="grid grid-rows-1 grid-flow-col h-8">
-                        <div class="col-span-2"></div>
-                        <div class="col-span-6 bg-black rounded-tl-lg ml-1"></div>
+                        <div className="col-span-2"></div>
+                        <div className="col-span-6 bg-black rounded-tl-lg ml-1"></div>
                     </div>
                 </div>
+            </div>
+            <div className="text-center text-white text-xl m-1 p-2 font-semibold md:hidden">
+                CV can be viewed better on large devices.
+            </div>
+            <div className="md:hidden text-center mt-4">
+                {/* for small scale devices */}
+                <Link to="/files/Aakash's CV.pdf" target="_blank" download className="text-white rounded-lg w-44 border-2 border-double text-xl
+                flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
+                hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black" onClick={exportPdf}>Download CV</Link>
+            </div>
+            <div className="hidden md:text-center md:mt-4 md:block md:pb-4">
+                <button className="text-white rounded-lg md:h-auto md:w-48 border-2 border-double text-xl
+                flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
+                hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black" onClick={exportPdf}>Download CV</button>
             </div>
         </div>
     )
