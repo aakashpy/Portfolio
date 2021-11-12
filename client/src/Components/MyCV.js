@@ -5,11 +5,11 @@ const MyCV = (props) => {
     return (
         <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto">
             {props.navbar}
-            <div className="mt-4 pb-4 grid grid-cols-12 ">
-                <div className="col-start-3 col-end-11 bg-white text-black">
+            <div className="mt-4 pb-4 grid grid-cols-12">
+                <div className="col-start-3 col-end-11 bg-gray-300 text-black">
                     <div className="grid grid-rows-1 grid-flow-col h-8">
-                        <div class="col-span-2 bg-black"></div>
-                        <div class="col-span-6 "></div>
+                        <div class="col-span-2 bg-black rounded-br-lg"></div>
+                        <div class="col-span-6"></div>
                     </div>
                     <div className="grid grid-cols-12 bg-color-gray-100">
                         <div className="col-start-1 col-end-4 pl-2 pr-2 bg-gray-700 text-white rounded-lg m-1">
@@ -70,24 +70,24 @@ const MyCV = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-start-4 col-span-9 pl-4 pr-2">
-                            <div className="text-2xl font-semibold">
+                        <div className="col-start-4 col-span-9 pl-4 pr-2 bg-gray-700 text-white rounded-lg m-1">
+                            <div className="text-2xl font-semibold mt-2 bg-gray-500 rounded-t-lg p-1">
                                 SUMMARY
                             </div>
                             <hr />
-                            <div className="text-md text-center pt-2">
+                            <div className="text-md text-center pt-2 bg-gray-500 rounded-b-lg p-1">
                                 <p>
                                     I am Full Stack Web Developer, experienced with all stages of developement cycle of web projects. Well versed
                                     with numerous programming languages including html, css ,php, python, sql, javascript. I also develope
                                     standalone GUI using python.
                                 </p>
                             </div>
-                            <div className="text-2xl font-semibold mt-10">
+                            <div className="text-2xl font-semibold mt-10 bg-gray-500 rounded-t-lg p-1">
                                 SKILLS HIGHLIGHTS
                             </div>
                             <hr />
-                            <div className="grid grid-cols-3 pt-4">
-                                <div className="border-2 ml-1 mr-1 p-1">
+                            <div className="grid grid-cols-3 pt-4 bg-gray-500 rounded-b-lg p-1">
+                                <div className="border-2 rounded-lg ml-1 mr-1 p-1">
                                     <div className="text-xl">SOFT SKILLS</div>
                                     <div>
                                         <li>Project Management</li>
@@ -97,7 +97,7 @@ const MyCV = (props) => {
                                         <li>Team Work</li>
                                     </div>
                                 </div>
-                                <div className="border-2 ml-1 mr-1 p-1">
+                                <div className="border-2 rounded-lg ml-1 mr-1 p-1">
                                     <div className="text-xl">HARD SKILLS</div>
                                     <div>
                                         <li>Frameworks</li>
@@ -107,7 +107,7 @@ const MyCV = (props) => {
                                         <li>Problem Solving</li>
                                     </div>
                                 </div>
-                                <div className="border-2 ml-1 mr-1 p-1">
+                                <div className="border-2 rounded-lg ml-1 mr-1 p-1">
                                     <div className="text-xl">PROGRAMMING LANGUAGES</div>
                                     <div>
                                         <li>HTML, CSS, PHP, SQL</li>
@@ -121,13 +121,13 @@ const MyCV = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="text-2xl font-semibold mt-10">
+                            <div className="text-2xl font-semibold mt-10 bg-gray-500 rounded-t-lg p-1">
                                 EXPERIENCE
                             </div>
                             <hr />
-                            <div className="grid grid-rows-3 grid-flow-col pt-4">
+                            <div className="grid grid-rows-3 grid-flow-col pt-4 bg-gray-500 rounded-b-lg p-1">
                                 <div className="row-span-3">
-                                    <li className="text-lg font-semibold">ShapeAi</li>
+                                    <div className="text-lg font-semibold">ShapeAi</div>
                                     <div className="text-lg font-semibold">10/7/21 - 10/10/21</div>
                                 </div>
                                 <div className="row-span-3 col-span-2 pl-12 pr-3">
@@ -140,11 +140,11 @@ const MyCV = (props) => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="text-2xl font-semibold mt-10">
+                            <div className="text-2xl font-semibold mt-10 bg-gray-500 rounded-t-lg p-1">
                                 EDUCATION
                             </div>
                             <hr />
-                            <div class="grid grid-flow-row grid-cols-5 grid-rows-3 gap-4">
+                            <div class="grid grid-flow-row grid-cols-5 grid-rows-3 gap-4 bg-gray-500 rounded-b-lg p-1">
                                 <div className="row-span-3 col-span-2">
                                     <div className="text-lg font-semibold">Atharva College of Engineering</div>
                                     <div className="text-lg font-semibold">2019 - 2023</div>
@@ -177,7 +177,7 @@ const MyCV = (props) => {
                     </div>
                     <div className="grid grid-rows-1 grid-flow-col h-8">
                         <div class="col-span-2"></div>
-                        <div class="col-span-6 bg-black"></div>
+                        <div class="col-span-6 bg-black rounded-tl-lg ml-1"></div>
                     </div>
                 </div>
             </div>
