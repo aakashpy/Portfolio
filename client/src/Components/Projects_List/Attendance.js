@@ -1,10 +1,10 @@
 import React from 'react'
-import NodeMCU from '../Images/NodeMCU.jpg'
-import fingerprint from '../Images/fingerprint.jpg'
-import pushbuttons from '../Images/pushbuttons.jpg'
-import i2c_lcd from '../Images/i2c_lcd.jpg'
-import jumpers from '../Images/jumpers.jpg'
-import breadboard from '../Images/breadboard.jpg'
+import NodeMCU from '../Images/ATTENDANCE/NodeMCU.jpg'
+import fingerprint from '../Images/ATTENDANCE/fingerprint.jpg'
+import pushbuttons from '../Images/ATTENDANCE/pushbuttons.jpg'
+import i2c_lcd from '../Images/ATTENDANCE/i2c_lcd.jpg'
+import jumpers from '../Images/ATTENDANCE/jumpers.jpg'
+import breadboard from '../Images/ATTENDANCE/breadboard.jpg'
 
 const Attendance = (props) => {
     return (
@@ -129,7 +129,7 @@ const Attendance = (props) => {
                                     STEP 1 -{'>'}
                                 </td>
                                 <td className="border border-black">
-                                    Do all the circuit connections as given in the <a href={require('../Images/circuit_diagram.jpg').default} target="_blank" rel="noreferrer" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">diagram</a>. Make sure u give 5 volt power supply to NodeMCU and not above it as it
+                                    Do all the circuit connections as given in the <a href={require('../Images/ATTENDANCE/circuit_diagram.jpg').default} target="_blank" rel="noreferrer" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">diagram</a>. Make sure u give 5 volt power supply to NodeMCU and not above it as it
                                     would damage the board. Upload the sketch from the github link given below to NodeMCu using Arduino IDE. Once the code is uploaded to the board you will
                                     see the introduction text on LCD screen. If connections are proper it should not give any errors.
                                 </td>

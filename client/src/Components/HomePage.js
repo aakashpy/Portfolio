@@ -18,7 +18,7 @@ const HomePage = (props) => {
                 {/* my skill sets */}
                 {/* <div className="text-white flex flex-col mt-4 pb-7 md:hidden"> */}
                 <div className="text-white flex flex-col mt-4">
-                    <div className="font-serif text-center text-3xl md:text-4xl">My Skill Sets</div>
+                    <div className="font-serif text-center text-3xl md:text-4xl">My Interests</div>
                     <div className="flex flex-row flex-wrap justify-center pb-4">
                         <div>
                             <img className="h-32 w-32 m-3 rounded-lg md:h-48 md:w-48"

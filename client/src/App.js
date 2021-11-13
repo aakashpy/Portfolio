@@ -9,7 +9,7 @@ import Shot from './Components/Projects_List/Shot'
 import Sparkx from './Components/Projects_List/Sparkx'
 import PaymentIntegration from './Components/Projects_List/PaymentIntegration'
 import Tasky from './Components/Projects_List/Tasky'
-import Zomato from './Components/Projects_List/Zomato'
+import BookAPI from './Components/Projects_List/BookAPI'
 import BioFm from './Components/Projects_List/BioFm'
 import Billing from './Components/Projects_List/Billing'
 import ML from './Components/Projects_List/ML'
@@ -33,7 +33,7 @@ function App() {
         <Route path="/project/sparkx_bank" exact><Sparkx/></Route>
         <Route path="/project/payment_integration" exact><PaymentIntegration/></Route>
         <Route path="/project/tasky"exact><Tasky/></Route>
-        <Route path="/project/zomato" exact><Zomato/></Route>
+        <Route path="/project/bookapi" exact><BookAPI/></Route>
         <Route path="/project/bio_fm" exact><BioFm/></Route>
         <Route path="/project/billing" exact><Billing/></Route>
         <Route path="/project/ml" exact><ML/></Route>

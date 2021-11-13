@@ -2,8 +2,8 @@ import React from 'react'
 
 const Sparkx = () => {
     return (
-        <div>
-            This is Sparkx bank page
+        <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-screen text-center text-2xl text-white">
+            Under Development
         </div>
     )
 }

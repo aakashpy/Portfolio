@@ -2,8 +2,8 @@ import React from 'react'
 
 const Tasky = () => {
     return (
-        <div>
-            This is Tasky Page
+        <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-screen text-center text-2xl text-white">
+            Under Development
         </div>
     )
 }

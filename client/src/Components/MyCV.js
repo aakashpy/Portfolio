@@ -1,19 +1,7 @@
 import React from 'react'
-import jsPDF from 'jspdf';
-import * as htmlToImage from 'html-to-image';
 import { Link } from 'react-router-dom'
 const MyCV = (props) => {
-    const exportPdf = ()=>{
-        htmlToImage.toPng(document.getElementById('capture'), { quality: 0.95 })
-        .then(function (dataUrl) {
-          const pdf = new jsPDF();
-          const imgProps= pdf.getImageProperties(dataUrl);
-          const pdfWidth = pdf.internal.pageSize.getWidth();
-          const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-          pdf.addImage(dataUrl, 'PNG', 0, 0,pdfWidth, pdfHeight);
-          pdf.save("Aakash's CV.pdf"); 
-        });
-    }
+
     return (
         <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-screen md:h-auto">
             {props.navbar}
@@ -198,15 +186,16 @@ const MyCV = (props) => {
             </div>
             <div className="md:hidden text-center mt-4">
                 {/* for small scale devices */}
-                <Link to="/files/Aakash's CV.pdf" target="_blank" download className="text-white rounded-lg w-44 border-2 border-double text-xl
-                flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
-                hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black" onClick={exportPdf}>Download CV</Link>
+                <img src = {require('./Images/My_CV.jpg').default}alt="cv_image"/>
+                    {/* <Link to="/files/Aakash's CV.pdf" target="_blank" download className="text-white rounded-lg w-44 border-2 border-double text-xl
+                    flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
+                    hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">Download CV</Link> */}
             </div>
-            <div className="hidden md:text-center md:mt-4 md:block md:pb-4">
+            {/* <div className="hidden md:text-center md:mt-4 md:block md:pb-4">
                 <button className="text-white rounded-lg md:h-auto md:w-48 border-2 border-double text-xl
                 flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
-                hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black" onClick={exportPdf}>Download CV</button>
-            </div>
+                hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">Download CV</button>
+            </div> */}
         </div>
     )
 }
