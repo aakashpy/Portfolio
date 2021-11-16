@@ -33,7 +33,7 @@ function App() {
         <Route path="/project/sparkx_bank" exact><Sparkx/></Route>
         <Route path="/project/payment_integration" exact><PaymentIntegration/></Route>
         <Route path="/project/tasky"exact><Tasky/></Route>
-        <Route path="/project/bookapi" exact><BookAPI/></Route>
+        <Route path="/project/bookapi" exact><BookAPI navbar={<Navbar/>}/></Route>
         <Route path="/project/bio_fm" exact><BioFm/></Route>
         <Route path="/project/billing" exact><Billing/></Route>
         <Route path="/project/ml" exact><ML/></Route>

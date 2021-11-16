@@ -120,7 +120,7 @@ const Attendance = (props) => {
                         <thead>
                             <tr>
                                 <th className="w-1/6 ..."></th>
-                                <th classNName="w-5/6 ..."></th>
+                                <th className="w-5/6 ..."></th>
                             </tr>
                         </thead>
                         <tbody className="bg-gray-400">
