@@ -5,7 +5,7 @@ import Profilepic from './Images/Profilepic.jpg'
 const HomePage = (props) => {
     return (
         <>
-            <div className="flex flex-col bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto lg:h-screen">
+            <div className="flex flex-col bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto">
                 {props.navbar}
                 <div className="flex justify-center mt-2">
                     <img className="rounded-full border-2 border-blue-900 h-36 w-28 md:h-48 md:w-40" src={Profilepic} alt="hero" />
