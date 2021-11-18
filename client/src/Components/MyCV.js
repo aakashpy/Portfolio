@@ -34,11 +34,11 @@ const MyCV = (props) => {
                                     </p>
                                     <p className="text-md font-semibold pt-2">Email:</p>
                                     <hr />
-                                    <p className="text-sm">gholeaakash03@gmail.com
+                                    <p className="text-sm overflow-x-auto">gholeaakash03@gmail.com
                                     </p>
                                     <p className="text-md font-semibold pt-2">My Website:</p>
                                     <hr />
-                                    <p className="text-sm">https://aakashgportfolio.herokuapp.com
+                                    <p className="text-sm overflow-x-auto">https://aakashgportfolio.herokuapp.com
                                     </p>
                                 </div>
                             </div>
@@ -49,11 +49,11 @@ const MyCV = (props) => {
                                 <div className="bg-gray-500 rounded-md mt-2 mb-2 p-2">
                                     <p className="text-md font-semibold">Instagram:</p>
                                     <hr />
-                                    <p className="text-sm">https://www.instagram.com/aakashg_03/
+                                    <p className="text-sm overflow-x-auto">https://www.instagram.com/aakashg_03/
                                     </p>
                                     <p className="text-md font-semibold pt-2">Linkdin:</p>
                                     <hr />
-                                    <p className="text-sm">https://www.linkedin.com/in/aakash-ghole-350332218/
+                                    <p className="text-sm overflow-x-auto">https://www.linkedin.com/in/aakash-ghole-350332218/
                                     </p>
                                 </div>
                             </div>
@@ -86,8 +86,8 @@ const MyCV = (props) => {
                                 SKILLS HIGHLIGHTS
                             </div>
                             <hr />
-                            <div className="grid grid-cols-3 pt-4 bg-gray-500 rounded-b-lg p-1">
-                                <div className="border-2 rounded-lg ml-1 mr-1 p-1">
+                            <div className="grid grid-cols-3 pt-4 bg-gray-500 rounded-b-lg p-1 ">
+                                <div className="border-2 rounded-lg ml-1 mr-1 p-1 overflow-x-auto">
                                     <div className="text-xl">SOFT SKILLS</div>
                                     <div>
                                         <li>Project Management</li>
@@ -97,7 +97,7 @@ const MyCV = (props) => {
                                         <li>Team Work</li>
                                     </div>
                                 </div>
-                                <div className="border-2 rounded-lg ml-1 mr-1 p-1">
+                                <div className="border-2 rounded-lg ml-1 mr-1 p-1 overflow-x-auto">
                                     <div className="text-xl">HARD SKILLS</div>
                                     <div>
                                         <li>Frameworks</li>
@@ -107,7 +107,7 @@ const MyCV = (props) => {
                                         <li>Problem Solving</li>
                                     </div>
                                 </div>
-                                <div className="border-2 rounded-lg ml-1 mr-1 p-1">
+                                <div className="border-2 rounded-lg ml-1 mr-1 p-1 overflow-x-auto">
                                     <div className="text-xl">PROGRAMMING LANGUAGES</div>
                                     <div>
                                         <li>HTML, CSS, PHP, SQL</li>
@@ -125,7 +125,7 @@ const MyCV = (props) => {
                                 EXPERIENCE
                             </div>
                             <hr />
-                            <div className="grid grid-rows-3 grid-flow-col pt-4 bg-gray-500 rounded-b-lg p-1">
+                            <div className="grid grid-rows-3 grid-flow-col pt-4 bg-gray-500 rounded-b-lg p-1 overflow-x-auto">
                                 <div className="row-span-3">
                                     <div className="text-lg font-semibold">ShapeAi</div>
                                     <div className="text-lg font-semibold">10/7/21 - 10/10/21</div>
@@ -140,11 +140,11 @@ const MyCV = (props) => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="text-2xl font-semibold mt-10 bg-gray-500 rounded-t-lg p-1">
+                            <div className="text-2xl font-semibold mt-10 bg-gray-500 rounded-t-lg p-1 overflow-x-auto">
                                 EDUCATION
                             </div>
                             <hr />
-                            <div className="grid grid-flow-row grid-cols-5 grid-rows-3 gap-4 bg-gray-500 rounded-b-lg p-1">
+                            <div className="grid grid-flow-row grid-cols-5 grid-rows-3 gap-4 bg-gray-500 rounded-b-lg p-1 overflow-x-auto">
                                 <div className="row-span-3 col-span-2">
                                     <div className="text-lg font-semibold">Atharva College of Engineering</div>
                                     <div className="text-lg font-semibold">2019 - 2023</div>
@@ -185,17 +185,9 @@ const MyCV = (props) => {
                 CV can be viewed better on large devices.
             </div>
             <div className="md:hidden text-center mt-4">
-                {/* for small scale devices */}
-                <img src = {require('./Images/My_CV.jpg').default}alt="cv_image"/>
-                    {/* <Link to="/files/Aakash's CV.pdf" target="_blank" download className="text-white rounded-lg w-44 border-2 border-double text-xl
-                    flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
-                    hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">Download CV</Link> */}
+                <img src = {require('./Images/My_CV.jpg').default}alt="cv_image"/> 
             </div>
-            {/* <div className="hidden md:text-center md:mt-4 md:block md:pb-4">
-                <button className="text-white rounded-lg md:h-auto md:w-48 border-2 border-double text-xl
-                flex justify-center m-auto px-5 py-3 bg-gradient-to-r from-blue-500 via-black to-blue-500
-                hover:from-black hover:via-blue-500 hover:to-black focus:from-black focus:via-blue-500 focus:to-black">Download CV</button>
-            </div> */}
+            
         </div>
     )
 }

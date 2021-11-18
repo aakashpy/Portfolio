@@ -23,7 +23,7 @@ const Shot = (props) => {
                     This is an online mobile store website made using HTML, CSS, PHP, and JS. I have also used the Bootstrap framework in this project.
                     This project is very similar to other online shopping websites where new users have to register their account on the website
                     and registered users need to log in using their account. There are two types of mobiles Apple and Android.
-                    On the left-hand side of the screen there are some sorting options and according to that mobiles will be displayed with their name, image, price etc.
+                    On the left-hand side of the screen there are some filtering options and according to that mobiles will be displayed with their name, image, price etc.
                 </p>
                 <p className="pb-4 text-2xl font-base">
                     On clicking the add to cart button the selected mobile will be added in your cart. you can add multiple mobiles in the cart. In the My Cart's page you will see
