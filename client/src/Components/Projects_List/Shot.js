@@ -61,7 +61,7 @@ const Shot = (props) => {
                                     STEP 2 -{'>'}
                                 </td>
                                 <td className="border border-black">
-                                    Once you are logged in you will be redirected to the products page where all mobiles will be shown. If user wants to see only android phones they have to click on the radio button
+                                    Once you are logged in you will be redirected to the products page where all mobiles will be shown. If you want to see only android phones they have to click on the radio button
                                     of Android and click Filter button below. You will see only Android phones on the screen. The same thing is for Apple phones. For more filters you can choose options like
                                     brand ,android version, battery and ram and the results will be sorted accordingly. If no such matches are found then a message will be displayed that no results are matched.
                                 </td>
@@ -72,7 +72,7 @@ const Shot = (props) => {
                                 </td>
                                 <td className="border border-black">
                                     Choose which ever phone you want by clicking on Add to Cart. On clicking on Add to Cart the button changes to green color with text Added to cart. Then on Cart's Page
-                                    you can see the mobile you have selected and the total price below. If user wants to remove the mobile there is an remove option on the right which removes the mobile
+                                    you can see the mobile you have selected and the total price below. If you want to remove the mobile there is an remove option on the right which removes the mobile
                                     from the cart. Click on Confirm order button to confirm your purchase. next you will be redirected to the success page showing a message 'Your order is confirmed'. You can continue shopping
                                     or log out of your account if you want.
                                 </td>
@@ -82,7 +82,7 @@ const Shot = (props) => {
                                     STEP 4 -{'>'}
                                 </td>
                                 <td className="border border-black">
-                                    If you want to change password your account go to settings and fill the form for changing your password. If user has any query they can contact us by going to Contact Us page
+                                    If you want to change password of your account go to settings and fill the form for changing your password. If you any query then contact us by going to Contact Us page
                                     and fill the form.
                                 </td>
                             </tr>
