@@ -3,7 +3,7 @@ import React from 'react'
 const MyCV = (props) => {
 
     return (
-        <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-screen md:h-auto">
+        <div className="text-white bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto lg:h-auto">
             {props.navbar}
             <div className="hidden md:mt-4 md:pb-4 md:grid md:grid-cols-12">
                 <div className="col-start-3 col-end-11 bg-gray-300 text-black" id="capture">
