@@ -12,7 +12,7 @@ const HomePage = (props) => {
                 </div>
                 <div className="flex flex-wrap text-center text-white mx-auto pb-4">
                     <h1 className="font-serif text-xl md:text-3xl">Hello I am Aakash Ghole<br />
-                        I am a Full Stack Web Developer,GUI developer and Android developer</h1>
+                        I am a Full Stack Web Developer and GUI developer</h1>
                 </div>
                 <hr />
                 {/* my skill sets */}
