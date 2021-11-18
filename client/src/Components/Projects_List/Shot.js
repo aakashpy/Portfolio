@@ -14,23 +14,23 @@ const Shot = (props) => {
                     Description
                 </h2>
                 <p className="pb-4 text-2xl font-base">
-                    Online shopping is a form of electronic commerce which allows consumers to directly   buy goods or services from a seller over the Internet using a web browser.
-                    These shopping sites, enable customers to browse through a companies' products and services even on smartphones.
-                    Customers are attracted to online shopping not only because of high levels of convenience, but also because of broader selections, competitive pricing, and greater access to information.
-
+                    Online shopping is a form of electronic commerce that allows consumers to directly buy goods or services from a seller over the Internet using a web browser.
+                    These shopping sites, enable customers to browse through a companies' products and services even on smartphones.
+                    Customers are attracted to online shopping not only because of high levels of convenience, but also because of broader selections,
+                    competitive pricing, and greater access to information.
                 </p>
                 <p className="pb-4 text-2xl font-base">
-                    This is an online mobile store website made using HTML, CSS, PHP and JS. I have also used Bootstrap framework in this project. This project is very similar
-                    to other online shopping websites where new users have to register there account on the website and registered users need to login using there account.
-                    There are two types of mobile Apple and Android. On the left hand side of the screen there are some sorting options and according to that mobiles will
-                    be displayed with its name, image and price.
+                    This is an online mobile store website made using HTML, CSS, PHP, and JS. I have also used the Bootstrap framework in this project.
+                    This project is very similar to other online shopping websites where new users have to register their account on the website
+                    and registered users need to log in using their account. There are two types of mobiles Apple and Android.
+                    On the left-hand side of the screen there are some sorting options and according to that mobiles will be displayed with their name, image, price etc.
                 </p>
                 <p className="pb-4 text-2xl font-base">
                     On clicking the add to cart button the selected mobile will be added in your cart. you can add multiple mobiles in the cart. In the My Cart's page you will see
                     all the mobiles which you have added in the cart and the total amount will be calculated and shown below. By clicking on Buy now your purchase is completed
-                    and you are redirected to success page where a message is displayed that your payment is successful. In contact page you can ask any queries you have by entering your
+                    and you are redirected to success page where a message is displayed that your payment is successful. In contact page user can ask any queries by entering their
                     name and email address and message you want to sent.  All the data of the user is stored in the database {'('}MariaDB{')'}.
-                    There are three database user details, all mobiles details and user queries.
+                    There are four database user details, all mobiles details, mobiles brought by users and user queries.
                 </p>
                 <hr />
             </div>
@@ -96,7 +96,7 @@ const Shot = (props) => {
                 Project Link
                 <div className="text-white text-2xl text-center mt-2 mb-4">
                     Click Here -{'> '}
-                    <a className="underline" href="https://github.com/aakashpy/MOBILE-store">IOT Attendance</a>
+                    <a className="underline" href="https://github.com/aakashpy/MOBILE-store">SHOT Mobile Store</a>
                 </div>
             </div>
             <hr />
@@ -106,89 +106,30 @@ const Shot = (props) => {
             <div className="pt-4 pb-8 mx-auto">
                 <Splide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/home.jpg').default} alt="First slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/home.jpg').default} alt="First slide" />
                     </SplideSlide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/signup.jpg').default} alt="Second slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/signup.jpg').default} alt="Second slide" />
                     </SplideSlide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/products.jpg').default} alt="Third slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/products.jpg').default} alt="Third slide" />
                     </SplideSlide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/cart.jpg').default} alt="Fourth slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/cart.jpg').default} alt="Fourth slide" />
                     </SplideSlide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/success.jpg').default} alt="Fifth slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/success.jpg').default} alt="Fifth slide" />
                     </SplideSlide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/about.jpg').default} alt="Sixth slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/about.jpg').default} alt="Sixth slide" />
                     </SplideSlide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/contact.jpg').default} alt="Seventh slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/contact.jpg').default} alt="Seventh slide" />
                     </SplideSlide>
                     <SplideSlide>
-                        <img className=" mx-auto w-3/4"src={require('../Images/SHOT/settings.jpg').default} alt="Eighth slide" />
+                        <img className=" mx-auto w-3/4" src={require('../Images/SHOT/settings.jpg').default} alt="Eighth slide" />
                     </SplideSlide>
                 </Splide>
-                {/* <Carousel>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/home.jpg').default}
-                            alt="First slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/signup.jpg').default}
-                            alt="Second slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/products.jpg').default}
-                            alt="Third slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/cart.jpg').default}
-                            alt="Fourth slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/success.jpg').default}
-                            alt="Fifth slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/about.jpg').default}
-                            alt="Sixth slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/contact.jpg').default}
-                            alt="Seventh slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className=" mx-auto w-3/4"
-                            src={require('../Images/SHOT/settings.jpg').default}
-                            alt="Eighth slide"
-                        />
-                    </Carousel.Item>
-                </Carousel> */}
-
             </div>
             <hr />
             <div className="text-white text-4xl text-center mt-4">
