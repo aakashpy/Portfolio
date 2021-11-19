@@ -104,7 +104,10 @@ const Shot = (props) => {
                 Images of the Project
             </div>
             <div className="pt-4 pb-8 mx-auto">
-                <Splide>
+                <Splide options={{
+                    rewind:true,
+                    autoplay:true,
+                }}>
                     <SplideSlide>
                         <img className=" mx-auto w-3/4" src={require('../Images/SHOT/home.jpg').default} alt="First slide" />
                     </SplideSlide>
