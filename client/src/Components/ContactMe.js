@@ -143,7 +143,7 @@ const ContactMe = (props) => {
     }
     return (
         <>
-            <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto lg:h-screen">
+            <div className="bg-gradient-to-r from-blue-900 via-black to-blue-900 h-auto lg:pb-20">
                 {props.navbar}
                 <section className="text-white body-font relative">
                     <div className="container px-5 py-5 mx-auto">
