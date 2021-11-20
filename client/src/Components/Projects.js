@@ -120,19 +120,6 @@ const Projects = (props) => {
                             </Link>
                         </div>
                     </div>
-                    <div className="h-full bg-gray-100 bg-opacity-75  mx-1 px-4 pt-4 pb-10 rounded-lg overflow-hidden text-center relative">
-                        <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">My Portfolio</h1>
-                        <p className="leading-relaxed mb-3">Developed my portfolio website with help of MERN stack framework</p>
-                        <div className="absolute inset-x-0 bottom-0">
-                            <Link to="/project/portfolio" className="text-white inline-flex items-center border-2 p-2 rounded-lg
-                                bg-gradient-to-r from-blue-500 via-black to-blue-500 hover:from-black hover:via-blue-500 hover:to-black">See Details
-                                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14"></path>
-                                    <path d="M12 5l7 7-7 7"></path>
-                                </svg>
-                            </Link>
-                        </div>
-                    </div>
                 </div>
                 <div className="mx-auto text-center text-white text-base pb-3">
                     More projects will be uploaded soon...

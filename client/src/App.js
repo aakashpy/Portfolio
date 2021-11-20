@@ -11,7 +11,6 @@ import Tasky from './Components/Projects_List/Tasky'
 import BookAPI from './Components/Projects_List/BookAPI'
 import Billing from './Components/Projects_List/Billing'
 import ML from './Components/Projects_List/ML'
-import Portfolio from './Components/Projects_List/Portfolio'
 import Attendance from './Components/Projects_List/Attendance'
 import ContactMe from './Components/ContactMe'
 import MyCV from './Components/MyCV'
@@ -33,7 +32,6 @@ function App() {
         <Route path="/project/bookapi" exact><BookAPI navbar={<Navbar/>}/></Route>
         <Route path="/project/billing" exact><Billing navbar={<Navbar/>}/></Route>
         <Route path="/project/ml" exact><ML navbar={<Navbar/>}/></Route>
-        <Route path="/project/portfolio" exact><Portfolio navbar={<Navbar/>}/></Route>
         <Route path="/project/attendance"exact><Attendance navbar={<Navbar/>}/></Route>
       </Switch>
     </Router>
