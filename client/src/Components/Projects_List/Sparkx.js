@@ -83,9 +83,6 @@ const Sparkx = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="text-white text-4xl text-center mt-4 mb-4">
-
-            </div>
             <hr />
             <div className="text-white text-4xl text-center mt-4">
                 Images of the Project
