@@ -65,6 +65,10 @@ const Billing = (props) => {
                     <a className="underline" href="https://github.com/aakashpy/BillingSystem">Restaurant Billing System</a><br/>
                 </div>
             </div>
+            <hr />
+            <div className="text-white text-4xl text-center mt-4">
+                Images of the Project
+            </div>
             <div className="pt-4 pb-8 mx-auto md:w-3/4">
                 <Splide options={{
                     rewind: true,
