@@ -48,7 +48,7 @@ const Tasky = (props) => {
                                 </td>
                                 <td className="border border-black">
                                     Once you have added your task, on each task card you will see two buttons, Edit and Delete. Click on edit button and then click on any information you want to edit. 
-                                    Type the updated information and click Save Images. Click on Delete button to Delete the Task
+                                    Type the updated information and click Save changes. Click on Delete button to Delete the Task.
                                 </td>
                             </tr>
                         </tbody>
