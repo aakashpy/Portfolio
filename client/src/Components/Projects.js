@@ -108,7 +108,7 @@ const Projects = (props) => {
                         </div>
                     </div>
                     <div className="h-full bg-gray-100 bg-opacity-75  mx-1 px-4 pt-4 pb-10 rounded-lg overflow-hidden text-center relative">
-                        <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Machine Learning GUI</h1>
+                        <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">GUI for Machine Learning</h1>
                         <p className="leading-relaxed mb-3">Developed a GUI application for Machine Learning with QT-Designer and Python</p>
                         <div className="absolute inset-x-0 bottom-0">
                             <Link to="/project/ml" className="text-white inline-flex items-center border-2 p-2 rounded-lg
