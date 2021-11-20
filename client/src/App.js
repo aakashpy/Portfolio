@@ -14,7 +14,6 @@ import ML from './Components/Projects_List/ML'
 import Attendance from './Components/Projects_List/Attendance'
 import ContactMe from './Components/ContactMe'
 import MyCV from './Components/MyCV'
-import About from './Components/About'
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
         <Route path="/"exact><HomePage navbar={<Navbar/>}/></Route>
         <Route path="/project" exact><Projects navbar={<Navbar/>}/></Route>
         <Route path="/myCv" exact><MyCV navbar={<Navbar/>}/></Route>
-        <Route path="/about" exact><About navbar={<Navbar/>}/></Route>
         <Route path="/contact" exact><ContactMe navbar={<Navbar/>}/></Route>
         <Route path="/project/shot_mobile_store" exact><Shot navbar={<Navbar/>}/></Route>
         <Route path="/project/sparkx_bank" exact><Sparkx navbar={<Navbar/>}/></Route>
