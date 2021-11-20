@@ -48,8 +48,7 @@ const PaymentIntegration = (props) => {
                                     Clone the project using the github link given below. In the terminal type 'npm init' to install node modules. Go to the browser and serach for
                                     Email.js. Click on the first link, create your account. Now go to integration link on the left hand side and choose your framework for integration.
                                     For more information <a target="_blank" rel="noreferrer" 
-                                    className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://www.emailjs.com/docs/sdk/installation/">visit</a> 
-                                    there documentation where they have given code examples for email integrations.
+                                    className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://www.emailjs.com/docs/sdk/installation/">visit</a> there documentation where they have given code examples for email integrations.
                                 </td>
                             </tr>
                             <tr>
@@ -60,8 +59,8 @@ const PaymentIntegration = (props) => {
                                     Once you are done with the email integration, next step is to integrate payment gateway. Go to the browser and search for RazorPay. Click on the first link 
                                     and create your account. Make sure the test mode is On which you can see on the top of the dashboard. Now search for RazorPay integration documents or go to 
                                     this <a target="_blank" rel="noreferrer" 
-                                    className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://razorpay.com/docs/payment-gateway/server-integration/nodejs/">link</a>
-                                    'Here I have given link for integration with Node js you can search the integration steps for your own framework'. Follow the steps given below. 
+                                    className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://razorpay.com/docs/payment-gateway/server-integration/nodejs/">link</a> '
+                                    Here I have given link for integration with Node js you can search the integration steps for your own framework'. Follow the steps given below. 
                                 </td>
                             </tr>
                             <tr>
