@@ -38,7 +38,7 @@ const Tasky = (props) => {
                                 </td>
                                 <td className="border border-black">
                                     Clone the project using the github link given below. In the terminal type 'npm init' to install node modules. Then run the project by typing 'npm start'.
-                                    The website will start running within few seconds. Click on Add New buton on the navbar. Fill in the details in the modal form. Make sure you give image url and
+                                    The website will start running within few seconds. Click on Add New button on the navbar. Fill in the details in the modal form. Make sure you give image url and
                                     not image path from your local computer. Click on Add task to add your task.
                                 </td>
                             </tr>

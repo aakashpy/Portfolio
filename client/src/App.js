@@ -31,9 +31,9 @@ function App() {
         <Route path="/project/payment_integration" exact><PaymentIntegration navbar={<Navbar/>}/></Route>
         <Route path="/project/tasky"exact><Tasky navbar={<Navbar/>}/></Route>
         <Route path="/project/bookapi" exact><BookAPI navbar={<Navbar/>}/></Route>
-        <Route path="/project/billing" exact><Billing/></Route>
-        <Route path="/project/ml" exact><ML/></Route>
-        <Route path="/project/portfolio" exact><Portfolio/></Route>
+        <Route path="/project/billing" exact><Billing navbar={<Navbar/>}/></Route>
+        <Route path="/project/ml" exact><ML navbar={<Navbar/>}/></Route>
+        <Route path="/project/portfolio" exact><Portfolio navbar={<Navbar/>}/></Route>
         <Route path="/project/attendance"exact><Attendance navbar={<Navbar/>}/></Route>
       </Switch>
     </Router>
